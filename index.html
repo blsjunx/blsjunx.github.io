@@ -2,7 +2,8 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio</title>
+  <title>한민준 | Portfolio</title>
+
   <style>
     body {
       margin: 0;
@@ -10,37 +11,29 @@
       display: flex;
     }
 
-    /* 좌측 프로필 */
     .sidebar {
       width: 260px;
       background: #f5f5f5;
       padding: 20px;
       height: 100vh;
-      box-sizing: border-box;
-    }
-
-    .sidebar img {
-      width: 120px;
-      border-radius: 50%;
     }
 
     .sidebar h2 {
-      margin: 10px 0 5px;
+      margin-bottom: 5px;
     }
 
-    /* 오른쪽 내용 */
     .content {
       flex: 1;
       padding: 30px;
     }
 
     .section {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 15px;
     }
 
@@ -48,51 +41,108 @@
       border: 1px solid #ddd;
       border-radius: 10px;
       padding: 15px;
-      transition: 0.2s;
     }
 
-    .card:hover {
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: #0056b3;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- 왼쪽 -->
+  <!-- 좌측 -->
   <div class="sidebar">
-    <img src="profile.jpg" alt="profile">
-    <h2>홍길동</h2>
-    <p>Electrical Engineering</p>
-    <p>Seoul</p>
-    <p>email@example.com</p>
+    <h2>한민준</h2>
+    <p>건국대학교 전기전자공학부</p>
+    <p>📧 blsjun@konkuk.ac.kr</p>
   </div>
 
   <!-- 오른쪽 -->
   <div class="content">
 
+    <!-- 소개 -->
     <div class="section">
-      <h1>Welcome</h1>
-      <p>하드웨어 / AI 시스템 설계에 관심 있습니다.</p>
+      <h1>About Me</h1>
+      <p>
+        AI 하드웨어 및 컴퓨터 아키텍처 최적화에 관심을 가지고 있습니다.
+        특히 systolic array, NoC, 데이터플로우 설계와 같은 구조적 접근을 통해
+        성능과 전력 효율을 동시에 개선하는 문제를 다루고 있습니다.
+      </p>
+      <p>
+        FPGA 및 ASIC 설계 경험을 바탕으로, 단순 구현을 넘어서
+        PPA(Performance, Power, Area) 관점에서 설계 최적화를 수행하는 데 집중하고 있습니다.
+      </p>
     </div>
 
+    <!-- 관심분야 -->
+    <div class="section">
+      <h2>Interests</h2>
+      <ul>
+        <li>AI Accelerator Architecture</li>
+        <li>LLM Inference Optimization (Speculative Decoding)</li>
+        <li>Network-on-Chip (NoC)</li>
+        <li>Hardware-Software Co-design</li>
+        <li>ASIC / FPGA Design</li>
+      </ul>
+    </div>
+
+    <!-- 프로젝트 -->
     <div class="section">
       <h2>Projects</h2>
+
       <div class="cards">
 
         <div class="card">
-          <h3>RISC-V CPU</h3>
-          <p>RV32I 기반 CPU 설계</p>
+          <h3>ASIC Backend Flow Optimization</h3>
+          <p>
+            TSMC 28nm 공정에서 synthesis, STA, P&R 전체 플로우 수행.
+            systolic-array 기반 AI 설계의 PPA 최적화.
+          </p>
+          <a href="https://github.com/your-repo1" class="btn">GitHub</a>
         </div>
 
         <div class="card">
-          <h3>FFT Accelerator</h3>
-          <p>FPGA 기반 FFT 구현</p>
+          <h3>Tiny Neural Network Accelerator</h3>
+          <p>
+            tiled matrix multiplication 기반 Verilog 설계.
+          </p>
+          <a href="https://github.com/your-repo2" class="btn">GitHub</a>
         </div>
 
         <div class="card">
-          <h3>NPU Speculative Decoding</h3>
-          <p>LLM inference 최적화</p>
+          <h3>NoC-based Design Space Exploration</h3>
+          <p>
+            throughput / power 최적화를 위한 adaptive NoC 구조 설계.
+          </p>
+          <a href="https://github.com/your-repo3" class="btn">GitHub</a>
+        </div>
+
+        <div class="card">
+          <h3>64pt RISC-V FFT Accelerator</h3>
+          <p>
+            1R1W SRAM 제약 하에서 데이터플로우 및 파이프라인 최적화.
+          </p>
+          <a href="https://github.com/your-repo4" class="btn">GitHub</a>
+        </div>
+
+        <div class="card">
+          <h3>128-point FFT on FPGA</h3>
+          <p>
+            Verilog 기반 FFT 하드웨어 구현.
+          </p>
+          <a href="https://github.com/your-repo5" class="btn">GitHub</a>
         </div>
 
       </div>
