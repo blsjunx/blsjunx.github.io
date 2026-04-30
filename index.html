@@ -13,130 +13,124 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #f9fafb;
-  display: flex;
-  min-height: 100vh;
+  background: #ffffff;
+  color: #1f2937;
 }
 
-/* 좌측 프로필 - 중앙 정렬 개선 */
-.sidebar {
-  width: 280px;
-  background: white;
-  height: 100vh;
-  padding: 40px 20px;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  position: sticky;
-  top: 0;
-}
-
-.profile-container {
+/* 헤더 - 프로필 섹션 */
+.header {
   width: 100%;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f7ff 100%);
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 1px solid #f0ede9;
 }
 
 .profile-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 20px;
-  border: 2px solid #e5e7eb;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 32px rgba(93, 95, 191, 0.15);
+  border: 3px solid #ffffff;
 }
 
-.name {
-  font-size: 22px;
+.name-kr {
+  font-size: 28px;
   font-weight: 700;
   color: #1f2937;
-  margin-bottom: 12px;
-  letter-spacing: -0.3px;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
 }
 
-.university {
-  font-size: 13px;
+.name-en {
+  font-size: 16px;
   font-weight: 500;
   color: #6b7280;
-  margin-bottom: 4px;
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
 }
 
-.department {
-  font-size: 12px;
-  color: #9ca3af;
-  margin-bottom: 20px;
-  line-height: 1.5;
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.contact {
-  font-size: 12px;
-  color: #4f46e5;
-  text-decoration: none;
-  margin-top: 12px;
-  word-break: break-all;
+.info-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 12px;
+  font-size: 15px;
+  color: #6b7280;
 }
 
-.contact:hover {
-  color: #4338ca;
-  text-decoration: underline;
+.info-icon {
+  font-size: 18px;
+  color: #5d5fbf;
+  min-width: 24px;
 }
 
-/* 오른쪽 컨텐츠 */
+.info-text {
+  font-weight: 400;
+}
+
+.info-text.bold {
+  font-weight: 500;
+  color: #374151;
+}
+
+/* 메인 콘텐츠 */
 .content {
-  flex: 1;
-  padding: 60px 50px;
-  overflow-y: auto;
-}
-
-@media (max-width: 1024px) {
-  body {
-    flex-direction: column;
-  }
-  
-  .sidebar {
-    width: 100%;
-    height: auto;
-    padding: 30px;
-    position: static;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-  
-  .content {
-    padding: 40px 30px;
-  }
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 30px;
 }
 
 /* 섹션 */
 .section {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .section-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 20px;
-  letter-spacing: -0.4px;
+  letter-spacing: -0.3px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #5d5fbf 0%, #8b5fbf 100%);
+  border-radius: 2px;
 }
 
 /* 카드 */
 .card {
-  background: white;
-  padding: 24px;
+  background: #ffffff;
+  padding: 28px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f3f4f6;
   line-height: 1.7;
-  color: #374151;
+  color: #4b5563;
   font-size: 15px;
 }
 
 .card p {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .card p:last-child {
@@ -147,121 +141,145 @@ body {
 .interests-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .interest-item {
   display: flex;
   align-items: center;
-  color: #374151;
+  color: #4b5563;
   font-size: 15px;
+  padding: 8px 0;
 }
 
 .interest-item::before {
-  content: "→";
-  margin-right: 12px;
-  color: #4f46e5;
-  font-weight: 600;
+  content: '◆';
+  margin-right: 14px;
+  color: #5d5fbf;
+  font-size: 8px;
+  flex-shrink: 0;
 }
 
 /* 프로젝트 그리드 */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
 }
 
 .project-card {
-  background: white;
+  background: #ffffff;
   padding: 24px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f3f4f6;
   text-decoration: none;
   color: #1f2937;
   transition: all 0.3s ease;
-  border: 1px solid #f3f4f6;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 120px;
+  min-height: 110px;
   text-align: center;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.12);
-  border-color: #4f46e5;
-  color: #4f46e5;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(93, 95, 191, 0.12);
+  border-color: #5d5fbf;
+  color: #5d5fbf;
 }
 
 /* 기술 스택 */
 .tech-section {
   display: grid;
-  gap: 16px;
-  margin-top: 8px;
+  gap: 18px;
 }
 
 .tech-category {
-  color: #374151;
+  color: #4b5563;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .tech-label {
   font-weight: 600;
-  color: #1f2937;
+  color: #5d5fbf;
   display: inline-block;
-  min-width: 80px;
+  min-width: 90px;
 }
 
-/* 기술 태그 */
-.tech-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-}
+/* 반응형 */
+@media (max-width: 768px) {
+  .header {
+    padding: 40px 20px;
+  }
 
-.tech-tag {
-  display: inline-block;
-  background: #f3f4f6;
-  color: #4f46e5;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 500;
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .name-kr {
+    font-size: 24px;
+  }
+
+  .content {
+    padding: 40px 20px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
 <body>
 
-<!-- 좌측 프로필 -->
-<div class="sidebar">
-  <div class="profile-container">
-    <img src="profile.jpg" alt="Minjun Han" class="profile-img">
-    <div class="name">Minjun Han</div>
-    <div class="university">Konkuk University</div>
-    <div class="department">Electrical and Electronics<br>Engineering</div>
-    <a href="mailto:blsjun@konkuk.ac.kr" class="contact">
-      📧 blsjun@konkuk.ac.kr
-    </a>
+<!-- 헤더 - 프로필 섹션 -->
+<div class="header">
+  <img src="profile.jpg" alt="Minjun Han" class="profile-img">
+  
+  <div class="name-kr">한민준</div>
+  <div class="name-en">Minjun Han</div>
+  
+  <div class="info-grid">
+    <div class="info-item">
+      <span class="info-icon">🎓</span>
+      <span class="info-text">Konkuk University, <span class="bold">Electrical and Electronics Engineering</span></span>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">📍</span>
+      <span class="info-text">Seoul, Republic of Korea</span>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">✉️</span>
+      <a href="mailto:blsjun@konkuk.ac.kr" style="text-decoration: none; color: inherit;">
+        <span class="info-text">blsjun@konkuk.ac.kr</span>
+      </a>
+    </div>
   </div>
 </div>
 
-<!-- 오른쪽 컨텐츠 -->
+<!-- 메인 콘텐츠 -->
 <div class="content">
   
   <!-- About Me -->
   <div class="section">
-    <div class="section-title">About</div>
+    <div class="section-title">About Me</div>
     <div class="card">
-      <p>Computer Architecture와 AI Hardware 최적화를 연구하는 엔지니어입니다. Systolic Array, NoC, Dataflow 기반 설계에서 Performance와 Power Efficiency의 Trade-off를 다루며, 실제 Silicon 구현까지 경험했습니다.</p>
+      <p>안녕하세요, 건국대학교 전기전자공학부에 재학 중인 한민준입니다. AI 하드웨어와 컴퓨터 아키텍처 최적화에 관심을 가지고 있으며, systolic array, NoC, dataflow 기반 설계를 통해 성능과 전력 효율 간의 trade-off를 고민하고 있습니다.</p>
       
-      <p>RISC-V CPU의 메모리 계층 구조부터 시작해 Neural Network Accelerator, FFT Hardware 설계를 거치며, 문제를 어떻게 "빠르고 효율적으로" 해결할지 고민합니다.</p>
+      <p>RISC-V CPU의 메모리 계층 구조 설계부터 Neural Network Accelerator, FFT 하드웨어 구현까지 경험하며, 단순한 기능 구현을 넘어서 문제를 어떻게 더 빠르고 효율적으로 해결할 수 있을지에 집중해왔습니다.</p>
       
-      <p>현재는 LLM Inference Bottleneck과 Speculative Decoding 같은 최신 최적화 방향에 관심을 가지고 있습니다.</p>
+      <p>현재는 LLM inference 과정에서 발생하는 병목을 분석하고, speculative decoding과 같은 최신 기법을 실제 하드웨어 구조에 적용하는 방향에 관심을 두고 있습니다.</p>
     </div>
   </div>
 
@@ -270,10 +288,8 @@ body {
     <div class="section-title">Interests</div>
     <div class="card">
       <div class="interests-list">
-        <div class="interest-item">AI Accelerator Architecture</div>
-        <div class="interest-item">LLM Inference Optimization</div>
-        <div class="interest-item">Network-on-Chip (NoC) Design</div>
-        <div class="interest-item">ASIC / FPGA Design & Optimization</div>
+        <div class="interest-item">Hardware Architecture for AI Accelerators</div>
+        <div class="interest-item">SoC Design</div>
       </div>
     </div>
   </div>
