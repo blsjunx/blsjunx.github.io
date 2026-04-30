@@ -1,90 +1,131 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>한민준 | Portfolio</title>
+<meta charset="UTF-8">
+<title>한민준 | Portfolio</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f9fafb;
+  display: flex;
+}
 
-    .sidebar {
-      width: 260px;
-      background: #f5f5f5;
-      padding: 20px;
-      height: 100vh;
-    }
+/* 좌측 프로필 */
+.sidebar {
+  width: 280px;
+  background: white;
+  height: 100vh;
+  padding: 30px 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
 
-    .content {
-      flex: 1;
-      padding: 30px;
-    }
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
 
-    /* ✅ 모든 섹션 제목 통일 */
-    .section-title {
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
+.name {
+  font-size: 20px;
+  font-weight: 600;
+}
 
-    .section {
-      margin-bottom: 40px;
-    }
+.info {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
-    }
+/* 오른쪽 */
+.content {
+  flex: 1;
+  padding: 50px;
+}
 
-    /* ✅ 버튼형 카드 */
-    .card-btn {
-      display: block;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      text-decoration: none;
-      color: black;
-      transition: 0.2s;
-      font-weight: 500;
-    }
+/* 섹션 */
+.section {
+  margin-bottom: 50px;
+}
 
-    .card-btn:hover {
-      background: #f0f0f0;
-      transform: translateY(-2px);
-    }
-  </style>
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* 카드 */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* 프로젝트 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.project {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* 리스트 */
+ul {
+  padding-left: 18px;
+  color: #333;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- 좌측 -->
-  <div class="sidebar">
-    <h2>한민준</h2>
-    <p>Konkuk University</p>
-    <p>Department of Electrical and Electronics Engineering</p>
-    <p>📧 blsjun@konkuk.ac.kr</p>
+<!-- 좌측 -->
+<div class="sidebar">
+  <img src="profile.jpg" class="profile-img">
+
+  <div class="name">한민준</div>
+
+  <div class="info">Konkuk University</div>
+  <div class="info">Electrical and Electronics Engineering</div>
+
+  <div class="info" style="margin-top:15px;">📧 blsjun@konkuk.ac.kr</div>
+</div>
+
+<!-- 오른쪽 -->
+<div class="content">
+
+  <!-- About -->
+  <div class="section">
+    <div class="section-title">About</div>
+    <div class="card">
+      AI 하드웨어 및 컴퓨터 아키텍처 최적화에 관심을 가지고 있습니다.
+      systolic array, NoC, 데이터플로우 설계를 기반으로 성능과 전력 효율을 동시에 개선하는 문제를 다룹니다.
+    </div>
   </div>
 
-  <!-- 오른쪽 -->
-  <div class="content">
-
-    <!-- About -->
-    <div class="section">
-      <div class="section-title">About Me</div>
-      <p>
-        AI 하드웨어 및 컴퓨터 아키텍처 최적화에 관심을 가지고 있습니다.
-        특히 systolic array, NoC, 데이터플로우 설계를 기반으로
-        성능과 전력 효율을 동시에 개선하는 문제를 다루고 있습니다.
-      </p>
-    </div>
-
-    <!-- Interests -->
-    <div class="section">
-      <div class="section-title">Interests</div>
+  <!-- Interests -->
+  <div class="section">
+    <div class="section-title">Interests</div>
+    <div class="card">
       <ul>
         <li>AI Accelerator Architecture</li>
         <li>LLM Inference Optimization</li>
@@ -92,37 +133,38 @@
         <li>ASIC / FPGA Design</li>
       </ul>
     </div>
-
-    <!-- Projects -->
-    <div class="section">
-      <div class="section-title">Projects</div>
-
-      <div class="cards">
-
-        <a href="https://github.com/your-repo1" class="card-btn">
-          ASIC Backend Flow Optimization
-        </a>
-
-        <a href="https://github.com/your-repo2" class="card-btn">
-          Tiny Neural Network Accelerator
-        </a>
-
-        <a href="https://github.com/your-repo3" class="card-btn">
-          NoC-based Design Space Exploration
-        </a>
-
-        <a href="https://github.com/your-repo4" class="card-btn">
-          64pt RISC-V FFT Accelerator
-        </a>
-
-        <a href="https://github.com/your-repo5" class="card-btn">
-          128-point FFT on FPGA
-        </a>
-
-      </div>
-    </div>
-
   </div>
+
+  <!-- Projects -->
+  <div class="section">
+    <div class="section-title">Projects</div>
+
+    <div class="grid">
+
+      <a href="https://github.com/your-repo1" class="project">
+        ASIC Backend Flow Optimization
+      </a>
+
+      <a href="https://github.com/your-repo2" class="project">
+        Tiny Neural Network Accelerator
+      </a>
+
+      <a href="https://github.com/your-repo3" class="project">
+        NoC-based Design Space Exploration
+      </a>
+
+      <a href="https://github.com/your-repo4" class="project">
+        64pt RISC-V FFT Accelerator
+      </a>
+
+      <a href="https://github.com/your-repo5" class="project">
+        128-point FFT on FPGA
+      </a>
+
+    </div>
+  </div>
+
+</div>
 
 </body>
 </html>
