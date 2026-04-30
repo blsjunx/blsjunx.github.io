@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Minjun Han | Portfolio</title>
+
 <style>
 * {
   margin: 0;
@@ -17,107 +18,69 @@ body {
   color: #1f2937;
 }
 
-/* 헤더 - 프로필 섹션 */
-.header {
-  width: 100%;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f7ff 100%);
-  padding: 60px 20px;
-  text-align: center;
-  border-bottom: 1px solid #f0ede9;
+/* 전체 레이아웃 */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 왼쪽 프로필 */
+.sidebar {
+  width: 280px;
+  padding: 60px 30px;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-img {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 24px;
-  box-shadow: 0 12px 32px rgba(93, 95, 191, 0.15);
-  border: 3px solid #ffffff;
+  border: 2px solid #ddd;
 }
 
 .name-kr {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 8px;
-  letter-spacing: -0.5px;
+  margin-bottom: 6px;
 }
 
 .name-en {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
   color: #6b7280;
-  margin-bottom: 32px;
-  letter-spacing: 0.5px;
+  margin-bottom: 24px;
 }
 
-.info-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.info-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  font-size: 15px;
+.info {
+  text-align: center;
+  font-size: 14px;
   color: #6b7280;
+  line-height: 1.6;
 }
 
-.info-text {
-  font-weight: 400;
-}
-
-.info-text.bold {
-  font-weight: 500;
-  color: #374151;
-}
-
-/* 메인 콘텐츠 */
-.content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 30px;
+/* 오른쪽 콘텐츠 */
+.main {
+  flex: 1;
+  padding: 60px 80px;
 }
 
 /* 섹션 */
 .section {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .section-title {
   font-size: 22px;
   font-weight: 700;
-  color: #1f2937;
   margin-bottom: 20px;
-  letter-spacing: -0.3px;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, #5d5fbf 0%, #8b5fbf 100%);
-  border-radius: 2px;
 }
 
 /* 카드 */
 .card {
-  background: #ffffff;
-  padding: 28px;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  border: 1px solid #f3f4f6;
   line-height: 1.7;
   color: #4b5563;
   font-size: 15px;
@@ -127,191 +90,125 @@ body {
   margin-bottom: 14px;
 }
 
-.card p:last-child {
-  margin-bottom: 0;
-}
-
-/* Interests 리스트 */
+/* Interests */
 .interests-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-.interest-item {
-  display: flex;
-  align-items: center;
-  color: #4b5563;
-  font-size: 15px;
-  padding: 8px 0;
+  gap: 10px;
 }
 
 .interest-item::before {
   content: '◆';
-  margin-right: 14px;
-  color: #5d5fbf;
+  margin-right: 10px;
   font-size: 8px;
-  flex-shrink: 0;
 }
 
-/* 프로젝트 그리드 */
+/* 프로젝트 */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
 }
 
 .project-card {
-  background: #ffffff;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  border: 1px solid #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
   text-decoration: none;
   color: #1f2937;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 110px;
-  text-align: center;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.5;
+  transition: 0.2s;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(93, 95, 191, 0.12);
   border-color: #5d5fbf;
   color: #5d5fbf;
 }
 
-/* 기술 스택 */
-.tech-section {
-  display: grid;
-  gap: 18px;
-}
-
+/* Tech */
 .tech-category {
-  color: #4b5563;
-  font-size: 14px;
-  line-height: 1.7;
+  margin-bottom: 10px;
 }
 
 .tech-label {
   font-weight: 600;
-  color: #5d5fbf;
-  display: inline-block;
-  min-width: 90px;
 }
 
 /* 반응형 */
 @media (max-width: 768px) {
-  .header {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .main {
     padding: 40px 20px;
-  }
-
-  .profile-img {
-    width: 140px;
-    height: 140px;
-  }
-
-  .name-kr {
-    font-size: 24px;
-  }
-
-  .content {
-    padding: 40px 20px;
-  }
-
-  .section-title {
-    font-size: 20px;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
   }
 }
 </style>
 </head>
+
 <body>
 
-<div class="header">
-  <img src="profile.jpg" alt="Minjun Han" class="profile-img">
-  
-  <div class="name-kr">한민준</div>
-  <div class="name-en">Minjun Han</div>
-  
-  <div class="info-grid">
-    <div class="info-item">
-      <span class="info-text">
-        Konkuk University, 
-        <span class="bold">Electrical and Electronics Engineering</span>
-      </span>
-    </div>
+<div class="layout">
 
-    <div class="info-item">
-      <span class="info-text">Seoul, Republic of Korea</span>
-    </div>
+  <!-- 왼쪽 프로필 -->
+  <div class="sidebar">
+    <img src="profile.jpg" class="profile-img">
 
-    <div class="info-item">
-      <a href="mailto:blsjun@konkuk.ac.kr" style="text-decoration: none; color: inherit;">
-        <span class="info-text">blsjun@konkuk.ac.kr</span>
-      </a>
-    </div>
-  </div>
-</div>
+    <div class="name-kr">한민준</div>
+    <div class="name-en">Minjun Han</div>
 
-<div class="content">
-  
-  <div class="section">
-    <div class="section-title">About Me</div>
-    <div class="card">
-      <p>안녕하세요, 건국대학교 전기전자공학부에 재학 중인 한민준입니다. AI 하드웨어와 컴퓨터 아키텍처 최적화에 관심을 가지고 있으며, systolic array, NoC, dataflow 기반 설계를 통해 성능과 전력 효율 간의 trade-off를 고민하고 있습니다.</p>
-      
-      <p>RISC-V CPU의 메모리 계층 구조 설계부터 Neural Network Accelerator, FFT 하드웨어 구현까지 경험하며, 단순한 기능 구현을 넘어서 문제를 어떻게 더 빠르고 효율적으로 해결할 수 있을지에 집중해왔습니다.</p>
-      
-      <p>현재는 LLM inference 과정에서 발생하는 병목을 분석하고, speculative decoding과 같은 최신 기법을 실제 하드웨어 구조에 적용하는 방향에 관심을 두고 있습니다.</p>
+    <div class="info">
+      Konkuk University<br>
+      Electrical and Electronics Engineering<br><br>
+      Seoul, Republic of Korea<br><br>
+      blsjun@konkuk.ac.kr
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-title">Interests</div>
-    <div class="card">
-      <div class="interests-list">
-        <div class="interest-item">Hardware Architecture for AI Accelerators</div>
-        <div class="interest-item">SoC Design</div>
+  <!-- 오른쪽 -->
+  <div class="main">
+
+    <div class="section">
+      <div class="section-title">About Me</div>
+      <div class="card">
+        <p>안녕하세요, 건국대학교 전기전자공학부에 재학 중인 한민준입니다. AI 하드웨어와 컴퓨터 아키텍처 최적화에 관심을 가지고 있습니다.</p>
       </div>
     </div>
-  </div>
 
-  <div class="section">
-    <div class="section-title">Projects</div>
-    <div class="projects-grid">
-      <a href="#" class="project-card">ASIC Backend Flow Optimization</a>
-      <a href="#" class="project-card">Tiny Neural Network Accelerator</a>
-      <a href="#" class="project-card">NoC-based Design Space Exploration</a>
-      <a href="#" class="project-card">64pt RISC-V FFT Accelerator</a>
-      <a href="#" class="project-card">128-point FFT on FPGA</a>
-      <a href="#" class="project-card">CPU-assisted DMA Controller</a>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Tech Stack</div>
-    <div class="card">
-      <div class="tech-section">
-        <div class="tech-category">
-          <span class="tech-label">Languages:</span>
-          C, Python, Verilog HDL, RISC-V Assembly
-        </div>
-        <div class="tech-category">
-          <span class="tech-label">Tools:</span>
-          Synopsys (Design Compiler, PrimeTime, IC Compiler 2), Vivado, OrCAD, MATLAB
+    <div class="section">
+      <div class="section-title">Interests</div>
+      <div class="card">
+        <div class="interests-list">
+          <div class="interest-item">Hardware Architecture for AI Accelerators</div>
+          <div class="interest-item">SoC Design</div>
         </div>
       </div>
     </div>
+
+    <div class="section">
+      <div class="section-title">Projects</div>
+      <div class="projects-grid">
+        <a href="#" class="project-card">Project 1</a>
+        <a href="#" class="project-card">Project 2</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Tech Stack</div>
+      <div class="card">
+        <div class="tech-category">
+          <span class="tech-label">Languages:</span> C, Python, Verilog
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </div>
