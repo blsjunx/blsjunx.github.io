@@ -18,13 +18,16 @@
       height: 100vh;
     }
 
-    .sidebar h2 {
-      margin-bottom: 5px;
-    }
-
     .content {
       flex: 1;
       padding: 30px;
+    }
+
+    /* ✅ 모든 섹션 제목 통일 */
+    .section-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 15px;
     }
 
     .section {
@@ -37,25 +40,21 @@
       gap: 15px;
     }
 
-    .card {
+    /* ✅ 버튼형 카드 */
+    .card-btn {
+      display: block;
       border: 1px solid #ddd;
       border-radius: 10px;
-      padding: 15px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 12px;
-      background: #007bff;
-      color: white;
+      padding: 20px;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 14px;
+      color: black;
+      transition: 0.2s;
+      font-weight: 500;
     }
 
-    .btn:hover {
-      background: #0056b3;
+    .card-btn:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
     }
   </style>
 </head>
@@ -65,85 +64,60 @@
   <!-- 좌측 -->
   <div class="sidebar">
     <h2>한민준</h2>
-    <p>건국대학교 전기전자공학부</p>
+    <p>Konkuk University</p>
+    <p>Department of Electrical and Electronics Engineering</p>
     <p>📧 blsjun@konkuk.ac.kr</p>
   </div>
 
   <!-- 오른쪽 -->
   <div class="content">
 
-    <!-- 소개 -->
+    <!-- About -->
     <div class="section">
-      <h1>About Me</h1>
+      <div class="section-title">About Me</div>
       <p>
         AI 하드웨어 및 컴퓨터 아키텍처 최적화에 관심을 가지고 있습니다.
-        특히 systolic array, NoC, 데이터플로우 설계와 같은 구조적 접근을 통해
+        특히 systolic array, NoC, 데이터플로우 설계를 기반으로
         성능과 전력 효율을 동시에 개선하는 문제를 다루고 있습니다.
-      </p>
-      <p>
-        FPGA 및 ASIC 설계 경험을 바탕으로, 단순 구현을 넘어서
-        PPA(Performance, Power, Area) 관점에서 설계 최적화를 수행하는 데 집중하고 있습니다.
       </p>
     </div>
 
-    <!-- 관심분야 -->
+    <!-- Interests -->
     <div class="section">
-      <h2>Interests</h2>
+      <div class="section-title">Interests</div>
       <ul>
         <li>AI Accelerator Architecture</li>
-        <li>LLM Inference Optimization (Speculative Decoding)</li>
+        <li>LLM Inference Optimization</li>
         <li>Network-on-Chip (NoC)</li>
-        <li>Hardware-Software Co-design</li>
         <li>ASIC / FPGA Design</li>
       </ul>
     </div>
 
-    <!-- 프로젝트 -->
+    <!-- Projects -->
     <div class="section">
-      <h2>Projects</h2>
+      <div class="section-title">Projects</div>
 
       <div class="cards">
 
-        <div class="card">
-          <h3>ASIC Backend Flow Optimization</h3>
-          <p>
-            TSMC 28nm 공정에서 synthesis, STA, P&R 전체 플로우 수행.
-            systolic-array 기반 AI 설계의 PPA 최적화.
-          </p>
-          <a href="https://github.com/your-repo1" class="btn">GitHub</a>
-        </div>
+        <a href="https://github.com/your-repo1" class="card-btn">
+          ASIC Backend Flow Optimization
+        </a>
 
-        <div class="card">
-          <h3>Tiny Neural Network Accelerator</h3>
-          <p>
-            tiled matrix multiplication 기반 Verilog 설계.
-          </p>
-          <a href="https://github.com/your-repo2" class="btn">GitHub</a>
-        </div>
+        <a href="https://github.com/your-repo2" class="card-btn">
+          Tiny Neural Network Accelerator
+        </a>
 
-        <div class="card">
-          <h3>NoC-based Design Space Exploration</h3>
-          <p>
-            throughput / power 최적화를 위한 adaptive NoC 구조 설계.
-          </p>
-          <a href="https://github.com/your-repo3" class="btn">GitHub</a>
-        </div>
+        <a href="https://github.com/your-repo3" class="card-btn">
+          NoC-based Design Space Exploration
+        </a>
 
-        <div class="card">
-          <h3>64pt RISC-V FFT Accelerator</h3>
-          <p>
-            1R1W SRAM 제약 하에서 데이터플로우 및 파이프라인 최적화.
-          </p>
-          <a href="https://github.com/your-repo4" class="btn">GitHub</a>
-        </div>
+        <a href="https://github.com/your-repo4" class="card-btn">
+          64pt RISC-V FFT Accelerator
+        </a>
 
-        <div class="card">
-          <h3>128-point FFT on FPGA</h3>
-          <p>
-            Verilog 기반 FFT 하드웨어 구현.
-          </p>
-          <a href="https://github.com/your-repo5" class="btn">GitHub</a>
-        </div>
+        <a href="https://github.com/your-repo5" class="card-btn">
+          128-point FFT on FPGA
+        </a>
 
       </div>
     </div>
