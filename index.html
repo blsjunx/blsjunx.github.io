@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Minjun Han | Portfolio</title>
+
 <style>
 * {
   margin: 0;
@@ -13,184 +14,174 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f5f6f8;
+  display: flex;
+}
+
+/* =========================
+   LEFT SIDEBAR
+========================= */
+.sidebar {
+  width: 260px;
+  height: 100vh;
   background: #ffffff;
-  color: #1f2937;
+  border-right: 1px solid #e5e7eb;
+  padding: 40px 20px;
+  position: fixed;
 }
 
-/* 공통 컨테이너 (핵심) */
-.container {
-  max-width: 900px;
-  padding: 60px 30px;
+.profile {
+  text-align: center;
 }
 
-/* 프로필 섹션 */
-.header {
-  width: 100%;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f7ff 100%);
-  border-bottom: 1px solid #f0ede9;
-}
-
-.header-inner {
-  max-width: 900px;
-  padding: 60px 30px;
-}
-
-/* 이미지 */
-.profile-img {
-  width: 160px;
-  height: 160px;
+.profile img {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 24px;
-  box-shadow: 0 12px 32px rgba(93, 95, 191, 0.15);
-  border: 3px solid #ffffff;
+  margin-bottom: 16px;
 }
 
-/* 이름 */
-.name-kr {
-  font-size: 28px;
+.name {
   font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.info {
+  font-size: 13px;
+  color: #6b7280;
   margin-bottom: 8px;
 }
 
-.name-en {
-  font-size: 16px;
-  color: #6b7280;
-  margin-bottom: 32px;
+/* 메뉴 */
+.menu {
+  margin-top: 40px;
 }
 
-/* 정보 */
-.info-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.menu-item {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
 }
 
-.info-item {
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  color: #6b7280;
+.menu-item:hover {
+  background: #f3f4f6;
 }
 
-.info-text.bold {
-  font-weight: 500;
-  color: #374151;
+.menu-item.active {
+  background: #2563eb;
+  color: white;
 }
 
-/* 콘텐츠 */
-.content {
-  max-width: 900px;
-  padding: 60px 30px;
+/* =========================
+   MAIN CONTENT
+========================= */
+.main {
+  margin-left: 260px;
+  padding: 60px;
+  width: 100%;
 }
 
-/* 섹션 */
-.section {
-  margin-bottom: 50px;
-}
-
-.section-title {
-  font-size: 22px;
+.header-title {
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 20px;
-  position: relative;
-  padding-bottom: 12px;
 }
 
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: #5d5fbf;
+.header-desc {
+  border-left: 4px solid #2563eb;
+  padding-left: 16px;
+  color: #6b7280;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
 /* 카드 */
 .card {
-  background: #ffffff;
-  padding: 28px;
+  background: white;
+  padding: 22px;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  border: 1px solid #f3f4f6;
-  line-height: 1.7;
-  font-size: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  transition: 0.2s;
 }
 
-/* interests */
-.interest-item::before {
-  content: '◆';
-  margin-right: 10px;
-  color: #5d5fbf;
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
-/* 프로젝트 */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
 }
 
-/* 반응형 */
-@media (max-width: 768px) {
-  .header-inner,
-  .content {
-    padding: 40px 20px;
-  }
+.arrow {
+  font-size: 20px;
+  color: #9ca3af;
 }
 </style>
 </head>
+
 <body>
 
-<div class="header">
-  <div class="header-inner">
-    <img src="profile.jpg" class="profile-img">
-    
-    <div class="name-kr">한민준</div>
-    <div class="name-en">Minjun Han</div>
-
-    <div class="info-grid">
-      <div class="info-item">
-        Konkuk University, 
-        <span class="info-text bold">Electrical and Electronics Engineering</span>
-      </div>
-      <div class="info-item">Seoul, Republic of Korea</div>
-      <div class="info-item">blsjun@konkuk.ac.kr</div>
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="profile">
+    <img src="profile.jpg">
+    <div class="name">한민준</div>
+    <div class="desc">
+      Department of Electrical and Electronic Engineering,<br>
+      Konkuk University
     </div>
+
+    <div class="info">Seoul</div>
+    <div class="info">blsjun@konkuk.ac.kr</div>
+  </div>
+
+  <div class="menu">
+    <div class="menu-item">About Me</div>
+    <div class="menu-item">Project</div>
+    <div class="menu-item active">Study</div>
   </div>
 </div>
 
-<div class="content">
+<!-- MAIN -->
+<div class="main">
 
-  <div class="section">
-    <div class="section-title">About Me</div>
-    <div class="card">
-      <p>안녕하세요, 건국대학교 전기전자공학부에 재학 중인 한민준입니다...</p>
-    </div>
+  <div class="header-title">Welcome To My Personal Page :)</div>
+
+  <div class="header-desc">
+    <b>(About Me)</b> 학문적 배경과 연구 관심 분야에 대한 소개입니다.<br>
+    <b>(Project)</b> 지금까지 진행한 프로젝트 및 스터디, 세미나 자료입니다.<br>
+    <b>(Study)</b> 수업 내용을 바탕으로 개인적으로 정리한 페이지입니다.
   </div>
 
-  <div class="section">
-    <div class="section-title">Interests</div>
-    <div class="card">
-      <div class="interest-item">Hardware Architecture for AI Accelerators</div>
-      <div class="interest-item">SoC Design</div>
-    </div>
+  <div class="card">
+    <div class="card-title">About Me</div>
+    <div class="arrow">›</div>
   </div>
 
-  <div class="section">
-    <div class="section-title">Projects</div>
-    <div class="projects-grid">
-      <div class="card">ASIC Backend Flow Optimization</div>
-      <div class="card">Tiny Neural Network Accelerator</div>
-    </div>
+  <div class="card">
+    <div class="card-title">Project</div>
+    <div class="arrow">›</div>
   </div>
 
-  <div class="section">
-    <div class="section-title">Tech Stack</div>
-    <div class="card">
-      C, Python, Verilog HDL...
-    </div>
+  <div class="card">
+    <div class="card-title">Study</div>
+    <div class="arrow">›</div>
   </div>
 
 </div>
