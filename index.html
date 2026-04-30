@@ -20,9 +20,11 @@ body {
 /* 헤더 - 프로필 섹션 */
 .header {
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   background: linear-gradient(135deg, #ffffff 0%, #f8f7ff 100%);
   padding: 60px 20px;
-  text-align: center;
+  text-align: left; /* ← 좌측 정렬 */
   border-bottom: 1px solid #f0ede9;
 }
 
@@ -57,13 +59,13 @@ body {
   flex-direction: column;
   gap: 12px;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0; /* ← 가운데 정렬 제거 */
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* ← 좌측 정렬 */
   gap: 12px;
   font-size: 15px;
   color: #6b7280;
