@@ -99,7 +99,6 @@ body {
   position: relative;
   padding-bottom: 12px;
   
-  /* 토글 관련 스타일 추가 */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -130,20 +129,20 @@ body {
   height: 10px;
   border-right: 2.5px solid #8b5fbf;
   border-bottom: 2.5px solid #8b5fbf;
-  transform: translateY(-25%) rotate(45deg); /* 기본 상태: 아래 화살표 (닫힘) */
+  transform: translateY(-25%) rotate(45deg); 
   transition: transform 0.3s ease;
   margin-right: 8px;
 }
 
 /* 토글 열림 상태 화살표 */
 .section-title.open .arrow {
-  transform: translateY(25%) rotate(225deg); /* 열림 상태: 위 화살표 */
+  transform: translateY(25%) rotate(225deg); 
 }
 
 /* 부드러운 토글 애니메이션을 위한 Grid 래퍼 */
 .section-content-wrapper {
   display: grid;
-  grid-template-rows: 0fr; /* 기본 상태: 닫힘 */
+  grid-template-rows: 0fr; 
   transition: grid-template-rows 0.35s ease-out;
   overflow: hidden;
 }
@@ -155,7 +154,7 @@ body {
 
 .section-content {
   min-height: 0;
-  padding-top: 20px; /* 기존 타이틀의 margin-bottom 대체 */
+  padding-top: 20px; 
 }
 
 /* 카드 */
@@ -232,6 +231,11 @@ body {
   box-shadow: 0 8px 20px rgba(93, 95, 191, 0.12);
   border-color: #5d5fbf;
   color: #5d5fbf;
+}
+
+/* 링크가 없는 카드 처리 */
+div.project-card {
+  cursor: default;
 }
 
 /* 기술 스택 */
@@ -357,13 +361,14 @@ body {
     </div>
     <div class="section-content-wrapper">
       <div class="section-content">
+        <!-- 수정된 프로젝트 그리드 (순서 변경 및 링크 추가) -->
         <div class="projects-grid">
-          <a href="#" class="project-card">ASIC Backend Flow Optimization</a>
-          <a href="#" class="project-card">Tiny Neural Network Accelerator</a>
-          <a href="#" class="project-card">NoC-based Design Space Exploration</a>
-          <a href="#" class="project-card">64pt RISC-V FFT Accelerator</a>
-          <a href="#" class="project-card">128-point FFT on FPGA</a>
-          <a href="#" class="project-card">CPU-assisted DMA Controller</a>
+          <a href="https://github.com/blsjunx/AI_Digital_Integrated_Circuits" target="_blank" rel="noopener noreferrer" class="project-card">ASIC Backend Flow Optimization</a>
+          <div class="project-card">CPU-assisted DMA Controller</div>
+          <a href="https://github.com/blsjunx/Tiny_Neural_Network_Hardware_Accelerator" target="_blank" rel="noopener noreferrer" class="project-card">Tiny Neural Network Accelerator</a>
+          <a href="https://github.com/blsjunx/NoC_aware_AI_Accelerator_DSE" target="_blank" rel="noopener noreferrer" class="project-card">NoC-based Design Space Exploration</a>
+          <a href="https://github.com/blsjunx/RISC_V_FFT_Accelerator_Optimization" target="_blank" rel="noopener noreferrer" class="project-card">RISC-V FFT Accelerator Optimization</a>
+          <a href="https://github.com/blsjunx/128pt_FFT_verilog_ZYNQ" target="_blank" rel="noopener noreferrer" class="project-card">128-point FFT on FPGA</a>
         </div>
       </div>
     </div>
@@ -395,13 +400,10 @@ body {
 
 </div>
 
-<!-- 자바스크립트 토글 로직 추가 -->
+<!-- 자바스크립트 토글 로직 -->
 <script>
   function toggleSection(element) {
-    // 클릭된 타이틀에 'open' 클래스 토글
     element.classList.toggle('open');
-    
-    // 바로 다음에 오는 내용 래퍼(.section-content-wrapper)를 찾아서 'open' 클래스 토글
     const contentWrapper = element.nextElementSibling;
     if (contentWrapper) {
       contentWrapper.classList.toggle('open');
